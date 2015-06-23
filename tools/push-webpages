@@ -1,9 +1,0 @@
-if [ -d topublish -a -d tools ]
-then
-        :
-else
-        echo Run this from the root web-pages directory >&2
-        exit 1
-fi
-
-rsync -avP --delete --delete-excluded -e ssh --exclude '*~' topublish/ ${SF_USER:-$USER},hol@web.sourceforge.net:htdocs/
